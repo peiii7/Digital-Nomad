@@ -312,7 +312,7 @@ animation: octocat-wave 560ms ease-in-out;
   position: relative;
 }
 .background-image {
-  background-image: url('../docs/illust/Wall.svg');
+  background-image: url('./illust/Wall.svg');
   background-size: contain;
   background-repeat: no-repeat;
   height: 100vh; 
