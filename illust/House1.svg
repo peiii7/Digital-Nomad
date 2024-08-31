@@ -1,0 +1,55 @@
+<svg width="356" height="416" viewBox="0 0 356 416" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="36.5703" y="1" width="84.5527" height="279" fill="#B4D2D4" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<line x1="35.5703" y1="55.9111" x2="122.123" y2="55.9111" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<line x1="35.5703" y1="114.009" x2="122.123" y2="114.009" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<line x1="35.5703" y1="170.92" x2="122.123" y2="170.92" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<line x1="35.5703" y1="229.017" x2="122.123" y2="229.017" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="120.938" y="50.7979" width="154.506" height="229.203" fill="#F6F2E9" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="1" y="50.7979" width="35.9409" height="229.203" fill="#F6F2E9" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="133" y="70" width="131.979" height="2" rx="1" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="133" y="87" width="131.979" height="2" rx="1" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="133" y="104" width="131.979" height="2" rx="1" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="133" y="121" width="131.979" height="2" rx="1" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="133" y="138" width="131.979" height="2" rx="1" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="133" y="155" width="131.979" height="2" rx="1" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="133" y="172" width="131.979" height="2" rx="1" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="133" y="189" width="131.979" height="5.11392" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="133" y="209" width="131.979" height="5.11392" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="133" y="229" width="131.979" height="6.29958" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="9" y="70" width="21" height="2" rx="1" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="9" y="118" width="21" height="2" rx="1" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="9" y="86" width="21" height="2" rx="1" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="9" y="150" width="21" height="2" rx="1" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="9" y="102" width="21" height="2" rx="1" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="9" y="166" width="21" height="2" rx="1" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="9" y="198" width="21" height="2" rx="1" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="9" y="134" width="21" height="2" rx="1" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="9" y="182" width="21" height="2" rx="1" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="9" y="214" width="21" height="2" rx="1" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="10" y="226" width="19" height="46" rx="1" fill="#3F6975" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="136.164" y="235.76" width="59.654" height="35.9409" fill="#F6F2E9" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<rect x="208.488" y="235.76" width="59.654" height="35.9409" fill="#F6F2E9" stroke="#3B667A" stroke-width="2" stroke-linejoin="round"/>
+<mask id="path-31-inside-1_1063_135" fill="white">
+<rect x="129.703" y="149" width="56.3608" height="266.885" rx="1"/>
+</mask>
+<rect x="129.703" y="149" width="56.3608" height="266.885" rx="1" fill="#F7F3EA" stroke="#396774" stroke-width="4" stroke-linejoin="round" mask="url(#path-31-inside-1_1063_135)"/>
+<rect x="185.492" y="164.603" width="59.9098" height="250.282" fill="#B4D2D4" stroke="#396774" stroke-width="2" stroke-linejoin="round"/>
+<mask id="path-33-inside-2_1063_135" fill="white">
+<rect x="244.742" y="149" width="56.3608" height="266.885" rx="1"/>
+</mask>
+<rect x="244.742" y="149" width="56.3608" height="266.885" rx="1" fill="#F7F3EA" stroke="#396774" stroke-width="4" stroke-linejoin="round" mask="url(#path-33-inside-2_1063_135)"/>
+<rect x="300.441" y="184.811" width="54.3608" height="230.074" fill="#F6F2E9" stroke="#396774" stroke-width="2" stroke-linejoin="round"/>
+<rect x="76" y="184.811" width="54.3608" height="230.074" fill="#F6F2E9" stroke="#396774" stroke-width="2" stroke-linejoin="round"/>
+<rect x="149.598" y="186.469" width="16.2344" height="29.4957" fill="#3F6975" stroke="#396774" stroke-width="2" stroke-linejoin="round"/>
+<rect x="265.633" y="186.469" width="16.2344" height="29.4957" fill="#3F6975" stroke="#396774" stroke-width="2" stroke-linejoin="round"/>
+<rect x="149.598" y="241.172" width="16.2344" height="29.4957" fill="#3F6975" stroke="#396774" stroke-width="2" stroke-linejoin="round"/>
+<rect x="265.633" y="241.172" width="16.2344" height="29.4957" fill="#3F6975" stroke="#396774" stroke-width="2" stroke-linejoin="round"/>
+<rect x="149.598" y="295.875" width="16.2344" height="29.4957" fill="#3F6975" stroke="#396774" stroke-width="2" stroke-linejoin="round"/>
+<rect x="265.633" y="295.875" width="16.2344" height="29.4957" fill="#3F6975" stroke="#396774" stroke-width="2" stroke-linejoin="round"/>
+<rect x="149.598" y="350.578" width="16.2344" height="29.4957" fill="#3F6975" stroke="#396774" stroke-width="2" stroke-linejoin="round"/>
+<rect x="265.633" y="350.578" width="16.2344" height="29.4957" fill="#3F6975" stroke="#396774" stroke-width="2" stroke-linejoin="round"/>
+<line x1="184.486" y1="211.356" x2="244.736" y2="210.991" stroke="#396774" stroke-width="2" stroke-linejoin="round"/>
+<line x1="185.262" y1="262.432" x2="244.85" y2="262.432" stroke="#396774" stroke-width="2" stroke-linejoin="round"/>
+<line x1="185.262" y1="313.508" x2="244.85" y2="313.508" stroke="#396774" stroke-width="2" stroke-linejoin="round"/>
+<line x1="185.262" y1="365.356" x2="244.85" y2="365.356" stroke="#396774" stroke-width="2" stroke-linejoin="round"/>
+</svg>
