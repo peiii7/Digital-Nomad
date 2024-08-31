@@ -1,0 +1,532 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background-color: #F6F2E9;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+a {
+margin: 0;
+font-family: 'Open Sans', sans-serif;
+font-weight: 200;
+}
+
+h2{
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin:  auto;
+}
+
+p5{
+color: #000;
+font-family: 'Open Sans', sans-serif;
+font-size: 16px;
+font-weight: 350;
+letter-spacing: 0.02em; /* 设置字母间距 */
+line-height: normal;
+}
+
+p{
+color: #000;
+font-family: 'Open Sans', sans-serif;
+font-size: 20px;
+font-weight: 350;
+letter-spacing: 0.02em; /* 设置字母间距 */
+line-height: normal;
+}
+
+a,
+a:visited,
+a:hover {
+color: teal;
+text-decoration: none;
+border-bottom: 2px solid currentColor;
+}
+
+.nav__examples > * {
+margin-right: 0.5rem;
+}
+
+#intro {
+max-width: 60rem;
+margin: 2rem auto;
+height: 100vh;
+display: flexbox;
+flex-direction: column;
+align-items: center;
+gap: 36px;
+}
+
+.intro__hed {
+margin: 5rem auto;
+color: #000;
+text-align: center;
+font-family: "Dela Gothic One";
+font-size: 50px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.datavis{
+  max-width: 60rem;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 2rem auto;
+}
+#scrolly-1{
+  margin-top: 20%;
+}
+
+#scrolly-1, #scrolly-2,#scrolly-3 , #scrolly-5, #scrolly-7 {
+  display: flex;
+  align-items: center; 
+  flex-direction: column;
+  position: relative; 
+}
+
+#scrolly-1 article .step, #scrolly-2 article .step, #scrolly-3 article .step, #scrolly-4 article .step, #scrolly-5 article .step, #scrolly-4 article .step, #scrolly-7 article .step {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#scrolly-1 figure, #scrolly-2 figure, #scrolly-7 figure {
+  position: sticky;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+#scrolly-3 figure{
+  position: sticky;
+  top: -45%;
+  width: 90%;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+#scrolly-4 {
+  position: relative;
+  padding: 0;
+}
+
+#scrolly-4 figure {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  margin: 0;
+}
+
+#scrolly-4 article {
+  position: relative;
+  padding: 0;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+#scrolly-5 figure{
+  width: 100%;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+#scrolly-6 article .step {
+  margin-top: 70%;
+}
+#scrolly-6 .step[data-step="12"] {
+  margin-bottom: 0px; /* 减小这个数值来减少间距 */
+}
+
+#scrolly-7 {
+  margin-top: 10px; /* 根据需要调整距离 */
+}
+
+article {
+  position: relative;
+  padding: 1rem 0; /* 增加 padding 以確保滾動觸發的範圍更大 */
+  max-width: 30rem;
+  margin: 0 auto;
+  z-index: 100;
+}
+
+figure p {
+  text-align: center;
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.step:last-child {
+  margin-bottom: 0;
+}
+
+.step p {
+  font-size: 17px;
+  text-align: center;
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 2px solid #000;
+  border-radius: 36px;
+  text-align: left;
+  gap: 150px;
+}
+
+.center{
+text-align: center;
+}
+
+.github-corner:hover .octo-arm {
+animation: octocat-wave 560ms ease-in-out;
+}
+
+.road1{
+  background: #F6F2E9;
+  position: relative; 
+  margin: auto;
+}
+
+.image {
+  position: absolute;
+}
+
+.road2{
+  background: #F6F2E9;
+  position: relative; 
+  margin: auto;
+}
+.road2 .image:nth-child(2) {
+  z-index: 2;
+  top: 250px;
+  left: 60%;
+}
+
+.road2 .image:nth-child(3) {
+  z-index: 2;
+  top: 750px;
+  left: 10%;
+}
+.image:nth-child(1){
+  left: 25%;
+  width: 50%;
+}
+.image:nth-child(2) {
+  z-index: 2;
+  top: 350px;
+  left: 40%;
+}
+
+.image:nth-child(3) {
+  z-index: 2;
+  top: 650px;
+  left: 5%;
+}
+.image:nth-child(4) {
+  z-index: 2;
+  top: 850px;
+  left: 70%;
+}
+.sidescroll-container {
+  position: relative;
+  width: 100%;
+}
+
+.cloud-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.sidescroll {
+  position: relative;
+  z-index: 1;
+}
+
+.side {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10%;
+  padding: 10%;
+  margin-top: -10px; /* 消除可能的間隙 */
+}
+
+.side:last-child {
+  padding-bottom: 10%; /* 為最後一個side添加底部padding */
+}
+.text{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 36px;
+  flex: 1;
+  }
+.text h2{
+  margin: 0;
+}
+.imageside{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+}
+.imageside img {
+  max-width: calc(25% - 18px); /* 設定每張圖片的最大寬度，考慮到間距 */
+  height: auto; /* 確保圖片等比例縮放 */
+  flex-shrink: 1; /* 允許圖片縮小以適應父容器 */
+}
+.imageside2{
+  flex: 1;
+  text-align: center;
+}
+
+/*-------------------------------------------*/
+.community {
+  width: 100%;
+  background-color: #B4D2D4;
+  z-index: 1;
+  position: relative;
+}
+.community figure{
+  margin: 0;
+  position: relative;
+}
+.background-image {
+  background-image: url('../docs/illust/Wall.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100vh; 
+  position: relative;
+}
+.community h2 {
+  position: absolute;
+  top: 10%; 
+  left: 30%;
+  z-index: 2;
+}
+.community2{
+  background-color: #B4D2D4;
+}
+.community2 h2{
+  top: 10%; 
+  text-align: center;
+}
+.community2 img {
+  position: relative;
+  z-index: 1; 
+  display: block;
+  max-width: 60%;
+}
+
+.interview {
+  position: relative;
+  text-align: center;
+  color: black;
+  padding: 5% 15%;
+}
+.interview-images {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.interview-images .image2 {
+  max-width: 60%;
+  position: relative;
+}
+
+.interview-images .image2.left {
+  align-self: flex-start;
+}
+
+.interview-images .image2.right {
+  align-self: flex-end;
+}
+
+.side2 {
+  display: flex;
+  align-items: center; 
+  padding: 10%;
+  padding-bottom: 15%;
+  gap: 10%;
+}
+.side2 img{
+  margin: auto;
+}
+
+
+
+@keyframes octocat-wave {
+0%,
+100% {
+  transform: rotate(0);
+}
+
+20%,
+60% {
+  transform: rotate(-25deg);
+}
+
+40%,
+80% {
+  transform: rotate(10deg);
+}
+}
+
+@media (max-width: 500px) {
+.github-corner:hover .octo-arm {
+  animation: none;
+}
+
+.github-corner .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+}
+
+
+#outro {
+height: 250px;
+}
+
+@media (min-width: 840px) {
+.nav__examples {
+  margin-top: 0;
+  margin-left: 2rem;
+}
+}
+
+
+/*-------------地球那段-----------------*/
+footer {
+  position: relative;
+  overflow: hidden;
+  padding: 5% 7%;
+  margin-bottom: 0%;
+  /* 移除 height: 100vh; */
+}
+
+.global {
+  background-image: url('../docs/illust/Global.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 100%;
+  height: auto;
+}
+
+.global img {
+  width: 100px;
+  height: 90px;
+}
+
+.bottom, .bottom_Text{
+  position: relative;
+  z-index: 2;
+}
+
+.bottom {
+  max-width: 60rem;
+  margin: 10% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom_Text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom_Text img{
+  margin: 8px;
+}
+
+.bottom_right{
+  display: flex;
+  align-items: flex-start; 
+  gap: 56px;
+}
+
+.box1{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+}
+.box h3{
+ margin-bottom: 16px;
+ font-weight: 600;  
+}
+.contact{
+  gap: 0px;
+}
+
+.gif {
+  margin-bottom: 16px;
+
+  text-align: center;
+}
+
+/* 图片响应式设置 */
+.gif img {
+  display: block;
+  margin: 0 auto;
+  max-width: 70%;
+  }
+
+.man{
+  display: flex;
+  width: 169px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 16px;
+  gap: 16px;
+}
+.man img{
+  width: 130px;
+}
+.man p{
+  text-align: center;
+  font-size: 16px;
+}
+.mangroup{
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: auto;
+  width: 100%;
+  margin-bottom: 15%;
+}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nomads by Demographics</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #F6F2E9;
+        }
+        .container {
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        #buttons {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        button {
+            font-size: 12px;
+            padding: 5px 15px;
+            margin-right: 10px;
+            border-radius: 15px;
+            border: 1px solid #000;
+            background-color: #fff; /* 默认背景颜色 */
+            color: #000; /* 默认字体颜色 */
+            cursor: pointer; /* 鼠标悬停时变成手型 */
+            transition: background-color 0.3s, color 0.3s; /* 添加过渡效果 */
+        }
+        button:hover {
+            background-color: #f0f0f0; /* 鼠标悬停时背景颜色 */
+        }
+        button.active {
+            background-color: #000; /* 被点击时的背景颜色 */
+            color: #fff; /* 被点击时的字体颜色 */
+        }
+        .small-button {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 5px 10px;
+            cursor: pointer;
+        }
+        .tooltip {
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .filter-legend {
+            margin-top: 12px;
+            margin-bottom: 12px;
+            font-size: 12px;
+            text-align: left;
+            margin: 20px 20px 20px;
+        }
+        .filter-legend span {
+            display: inline-block;
+            margin-right: 16px;
+            margin-bottom: 12px;
+        }
+        .filter-legend .color-box {
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        #nomadsVisualization {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="buttons">
+            <button id="ageButton">Age</button>
+            <button id="incomeButton">Income</button>
+            <button id="raceButton">Race and Ethnicity</button>
+            <button id="eduButton">Educational Level</button>
+        </div>
+        <div class="filter-legend" id="filterLegend"></div>
+        <div id="nomadsVisualization"></div>
+    </div>
+    <div class="tooltip" id="tooltip"></div>
+    <script>
+        // 数据定义
+        const ageData = [
+            { group: '18 to 29 years', percentage: 22.40 },
+            { group: '30 to 39 years', percentage: 52.60 },
+            { group: '40 to 49 years', percentage: 19.70 },
+            { group: '50 to 59 years', percentage: 4.40 },
+            { group: '60 years and older', percentage: 0.90 }
+        ];
+
+        const incomeData = [
+            { group: 'Less than 25,000 U.S. dollars', percentage: 6 },
+            { group: '25,000 - 50,000 U.S. dollars', percentage: 15 },
+            { group: '50,000 - 100,000 U.S. dollars', percentage: 34 },
+            { group: '100,000 - 250,000 U.S. dollars', percentage: 35 },
+            { group: '250,000 - 1,000,000 U.S. dollars', percentage: 8 },
+            { group: 'Over 1,000,000 U.S. dollars', percentage: 2 }
+        ];
+
+        const raceData = [
+            { group: 'White', percentage: 59 },
+            { group: 'Asian', percentage: 14 },
+            { group: 'Latin', percentage: 12 },
+            { group: 'Black', percentage: 7 },
+            { group: 'Indian', percentage: 5 },
+            { group: 'Middle Eastern', percentage: 3 },
+            { group: 'Pacific', percentage: 1 }
+        ];
+
+        const eduData = [
+            { group: 'Bachelor\'s degree', percentage: 54 },
+            { group: 'Master\'s degree', percentage: 34 },
+            { group: 'PhD', percentage: 3 },
+            { group: 'High school', percentage: 9 }
+        ];
+
+        const width = 400;
+        const height = 400;
+        const svg = d3.select('#nomadsVisualization')
+            .append('svg')
+            .attr('width', width)
+            .attr('height', height);
+
+        // 固定离散颜色方案
+        const colorScheme = ['#336F73', '#3B7A86', '#468E9D', '#539EB2', '#67B4CC', '#8CCFDE', '#BFFBFF'];
+
+        const getColor = (index) => colorScheme[index % colorScheme.length];
+
+        const createPeopleArray = (data, totalPeople = 100) => {
+            let peopleArray = [];
+            data.forEach(group => {
+                const count = Math.round((group.percentage / 100) * totalPeople);
+                for (let i = 0; i < count; i++) {
+                    peopleArray.push(group);
+                }
+            });
+            return peopleArray;
+        };
+
+        const updatePeople = (data) => {
+            const peopleArray = createPeopleArray(data);
+
+            const people = svg.selectAll('.person')
+                .data(peopleArray);
+
+            people.exit().remove();
+
+            const enter = people.enter()
+                .append('circle')
+                .attr('class', 'person')
+                .attr('r', 15)
+                .attr('cx', (d, i) => (i % 10) * 40 + 20)
+                .attr('cy', (d, i) => Math.floor(i / 10) * 40 + 20)
+                .attr('fill', (d, i) => getColor(data.findIndex(group => group.group === d.group)))
+                .on('mouseover', function (event, d) {
+                    d3.select('#tooltip')
+                        .style('opacity', 1)
+                        .html(`Group: ${d.group}`)
+                        .style('left', `${event.pageX + 10}px`)
+                        .style('top', `${event.pageY - 20}px`);
+                })
+                .on('mouseout', function () {
+                    d3.select('#tooltip').style('opacity', 0);
+                });
+
+            enter.merge(people)
+                .attr('cx', (d, i) => (i % 10) * 40 + 20)
+                .attr('cy', (d, i) => Math.floor(i / 10) * 40 + 20)
+                .attr('fill', (d, i) => getColor(data.findIndex(group => group.group === d.group)));
+
+            updateFilterLegend(data);
+        };
+
+        const updateFilterLegend = (data) => {
+            const legend = d3.select('#filterLegend');
+            legend.html('');
+            data.forEach((group, index) => {
+                legend.append('span')
+                    .html(`<div class="color-box" style="background-color:${getColor(index)};"></div>${group.group}`);
+            });
+        };
+
+        const handleButtonClick = (buttonId) => {
+            // 移除所有按钮的 active 类
+            document.querySelectorAll('#buttons button').forEach(button => button.classList.remove('active'));
+
+            // 为当前点击的按钮添加 active 类
+            document.getElementById(buttonId).classList.add('active');
+        };
+
+        // 初始化
+        updatePeople(ageData);
+
+        // 按钮事件监听器
+        document.getElementById('ageButton').addEventListener('click', () => {
+            updatePeople(ageData);
+            handleButtonClick('ageButton');
+        });
+
+        document.getElementById('incomeButton').addEventListener('click', () => {
+            updatePeople(incomeData);
+            handleButtonClick('incomeButton');
+        });
+
+        document.getElementById('raceButton').addEventListener('click', () => {
+            updatePeople(raceData);
+            handleButtonClick('raceButton');
+        });
+
+        document.getElementById('eduButton').addEventListener('click', () => {
+            updatePeople(eduData);
+            handleButtonClick('eduButton');
+        });
+    </script>
+</body>
+</html>
