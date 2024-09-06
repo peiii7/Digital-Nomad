@@ -9,46 +9,54 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="icon" href="./illust/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="./style.css" />
+	<link
+	rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
 	<link rel="stylesheet" href="./character.css">
 	<script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
 
 <body>
 	<main>
-		<div style="height: 100vh;">
-			<section id="intro">
-				<h1 class="intro__hed">Digital Nomads: Global Lifestyle Rise and Local Impact</h1><br>
-				
-				<p>
-					Digital nomadism is a lifestyle that utilizes remote working
-					to travel and live around the world. More and more companies
-					are allowing employees to work from home, in another state, or
-					even on the other side of the world. This brings new
-					breakthroughs in what used to be full-time and part-time jobs.
-					The COVID-19 pandemic may be one of the factors driving this
-					trend. By September 2020, nearly 40% of people currently
-					working in the EU were working remotely full-time due to the
-					pandemic ( Ahrent et al., 2020 ). After the epidemic, remote
-					working has become a trend, and many countries have also relaxed visa regulations for digital nomads,
-					causing the
-					number of digital nomads to continue to grow.
-					<br><br><br>
-					<span style="color: rgb(255, 72, 0);">However, as digital nomadism grows, it also brings many changes to cities.</span> Their life and consumption
-					not only affect the local economy, but also promote new sharing economic models and community sharing
-					culture, and promote cross-cultural exchanges and cooperation. But this surge in <span
-						style="color: rgb(255, 72, 0)">"freedom" </span>has also triggered the anger of local residents, who view
-					these workers as<span style="color: rgb(255, 72, 0)">"invaders"</span> , depriving them of their land use
-					rights, driving up the cost of living, raising local prices, and introducing different cultural habits
-					and other issues.
-				</p>
-			</section>
+		<div class="top" style="height: 100vh;">
+			
+			<h1 class="intro__hed">Digital Nomads: Global Lifestyle Rise and Local Impact</h1><br>
+			<div class="Character" id="motion">
+				<img class="Character_spritesheet pixelart face-down" src="./illust/character.png" alt="Character" />
+			</div>
+			<div class="down-arrow"></div>
 		</div>
+		<section id="intro">
+			<p>
+				Digital nomadism is a lifestyle that utilizes remote working
+				to travel and live around the world. More and more companies
+				are allowing employees to work from home, in another state, or
+				even on the other side of the world. This brings new
+				breakthroughs in what used to be full-time and part-time jobs.
+				The COVID-19 pandemic may be one of the factors driving this
+				trend. By September 2020, nearly 40% of people currently
+				working in the EU were working remotely full-time due to the
+				pandemic ( Ahrent et al., 2020 ). After the epidemic, remote
+				working has become a trend, and many countries have also relaxed visa regulations for digital nomads,
+				causing the
+				number of digital nomads to continue to grow.
+				<br><br><br>
+				<span style="color: rgb(255, 72, 0);">However, as digital nomadism grows, it also brings many changes to cities.</span> Their life and consumption
+				not only affect the local economy, but also promote new sharing economic models and community sharing
+				culture, and promote cross-cultural exchanges and cooperation. But this surge in <span
+					style="color: rgb(255, 72, 0)">"freedom" </span>has also triggered the anger of local residents, who view
+				these workers as<span style="color: rgb(255, 72, 0)">"invaders"</span> , depriving them of their land use
+				rights, driving up the cost of living, raising local prices, and introducing different cultural habits
+				and other issues.
+			</p>
+		</section>
+		
 		<section id="scrolly-1">
 			<figure>
 				<div class="datavis">
 					<h2>Digital nomads by ...</h2>
-					<iframe src="https://peiii7.github.io/Data-Vis/human.html" style="border:0px #ffffff none;" name="Digital Nomads by..." scrolling="no" frameborder="0" marginheight="0px" marginwidth="0px" height="600px" width="800px" allowfullscreen></iframe>
-					
+					<iframe src="https://peiii7.github.io/Data-Human/human.html" title="iFrame" width="100%" height="600px" scrolling="no" frameborder="no" allow="fullscreen"></iframe>
 				</div>
 			</figure>
 			<article>
@@ -65,7 +73,7 @@
 			<figure>
 				<div class="datavis">
 					<h2 style="margin-bottom: 2rem;">Main occupations digital nomads worldwide 2024</h2>
-					<iframe title="Main occupations digital nomads worldwide 2024" aria-label="Interactive area chart" id="datawrapper-chart-bhcDc" src="https://datawrapper.dwcdn.net/bhcDc/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="366" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+					<iframe title="" aria-label="Dot Plot" id="datawrapper-chart-bhcDc" src="https://datawrapper.dwcdn.net/bhcDc/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="421" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
 					</script>
 				</div>
 			</figure>
@@ -82,10 +90,8 @@
 			<figure>
 				<div>
 					<h2 style="text-align: center;">Most visited countries by digital nomads worldwide 2024</h2>
-		<iframe title="Most visited countries by digital nomads worldwide 2024" aria-label="Map"
-		id="datawrapper-chart-xusTY" src="https://datawrapper.dwcdn.net/xusTY/1/" scrolling="no"
-		frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="600"
-		data-external="1"></iframe>
+					<iframe title="" aria-label="Map" id="datawrapper-chart-yXNqE" src="https://datawrapper.dwcdn.net/yXNqE/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="331" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+					</script>
 				</div>
 			</figure>
 			<article>
@@ -262,15 +268,35 @@
 				<p>Expats</p>
 			</div>
 		</div>
-	</main>
-	<footer>
-		<div class="global"></div>
 		<div class="bottom">
-			<h2>Globalization and social citizenship</h2><br><br><br>
+			<h2>Globalization and social citizenship</h2><br>
 			<p>With the rise of the Internet and remote work, people are no longer bound by geography, leading to changes in lifestyles and philosophies. Digital nomads foster globalization and create multicultural communities, introducing new communication and work modes. Coworking spaces help people connect and support local economies, advancing the sharing economy. <br>
 			<br>However, some view digital nomads as a "soft cultural invasion" that disrupts local lifestyles and causes tax and resource distribution issues. This trend challenges our concepts of citizenship and liberalism within state-based societies.</p>
 		</div>
 
+	</main>
+	<footer>
+		<div class="global"></div>
+		
+		<div class="portlet">
+			<input type="checkbox" />
+			<div class="portlet-header">
+			  <span>Reference</span>
+			  <a href="javascript:;"
+				 ><i class="fa fa-chevron-down" aria-hidden="true"></i
+				></a>
+			</div>
+			<div class="portlet-content">
+			  <div class="contentWindow">
+				<p>
+					Petzold, F., Volker, G., & Müller, T. (2021). An assessment of the impact of urban heat islands on global climate change. Procedia Computer Science, 198(3), 347-355. <br> <br>
+					Digital Nomad Tax. (n.d.). Digital nomad tax residency. Retrieved September 2, 2024, from https://digitalnomadtax.eu/digital-nomad-tax-residency/ <br> <br>
+					Wimmer, A., & Schiller, N. G. (2019). Methodological nationalism, the social sciences, and the study of migration: An essay in historical epistemology. Theory and Society, 48(5), 595-618. https://doi.org/10.1007/s11186-019-09360-6 <br> <br>
+					Petrova, K., & Varlamova, M. (2021). The impact of Airbnb on housing markets: Evidence from Berlin. Cities, 114, 103213. https://doi.org/10.1016/j.cities.2021.103213
+				</p>
+			  </div class="contentWindow">
+			</div>
+		</div>
 	    <div class="bottom_Text">
 		    <img src="./illust/FHP.png" class="fhp" style="width: 250px;">
 
@@ -278,21 +304,21 @@
 	          <img src="./illust/UJN.png" class="ujn"style="width: 96px;">
 			  <div class="box">
 				<h3>Data Partner</h3>
-			  <p5>Urban Jounalist Network</p5>
+			  <p>Urban Jounalist Network</p>
 			  </div>
 		    </div>
 			<div class="bottom_right">
 				<div class="box">
 					<h3> Course</h3>
-					<p5>Mapping Cities – Making Cities <br>
+					<p>Mapping Cities – Making Cities <br>
 					  Summer semester 2024 <br>
 					  #Society + Public domain <br>
-					  #Mobility + Urbanism</p5>
+					  #Mobility + Urbanism</p>
 				</div>
 				<div class="box">
 					<h3> Instructor</h3>
-					<p5>Marian Dörk<br>
-					 Hendrik Lehmann</p5>
+					<p>Marian Dörk<br>
+					 Hendrik Lehmann</p>
 				</div>			  
 				<div class="box">
 				   <h3> Credit</h3>
@@ -312,7 +338,8 @@
 
 	</footer>
 	<script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
-	<script src="../scrollama.min.js"></script>
+	<script src="./scrollama.min.js"></script>
+	<script src="./index.js"></script>
 	
 </body>
 

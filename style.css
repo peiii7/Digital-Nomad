@@ -8,6 +8,7 @@ body {
   background-color: #F6F2E9;
 }
 
+span,
 p,
 h1,
 h2,
@@ -19,7 +20,8 @@ font-family: 'Open Sans', sans-serif;
 font-weight: 200;
 }
 
-h2{
+
+.portlet-header, h2{
   font-size: 32px;
   font-style: normal;
   font-weight: 400;
@@ -27,14 +29,6 @@ h2{
   margin:  auto;
 }
 
-p5{
-color: #000;
-font-family: 'Open Sans', sans-serif;
-font-size: 16px;
-font-weight: 350;
-letter-spacing: 0.02em; /* 设置字母间距 */
-line-height: normal;
-}
 
 p{
 color: #000;
@@ -45,13 +39,6 @@ letter-spacing: 0.02em; /* 设置字母间距 */
 line-height: normal;
 }
 
-a,
-a:visited,
-a:hover {
-color: teal;
-text-decoration: none;
-border-bottom: 2px solid currentColor;
-}
 
 .nav__examples > * {
 margin-right: 0.5rem;
@@ -59,12 +46,13 @@ margin-right: 0.5rem;
 
 #intro {
 max-width: 60rem;
-margin: 2rem auto;
+margin: auto;
 height: 100vh;
-display: flexbox;
-flex-direction: column;
-align-items: center;
-gap: 36px;
+display: table;
+}
+#intro p{
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .intro__hed {
@@ -72,12 +60,48 @@ margin: 5rem auto;
 color: #000;
 text-align: center;
 font-family: "Dela Gothic One";
-font-size: 50px;
+font-size: 76px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
 }
 
+
+.down-arrow {
+  position: absolute;
+  top: calc(100vh - 60px);
+  left: calc(50% - 0px);
+  width: 0;
+  height: 30px;
+  border: 2px solid;
+  border-radius: 2px;
+  animation: jumpInfinite 1.5s infinite;
+}
+
+.down-arrow:after {
+  content: " ";
+  position: absolute;
+  top: 12px;
+  left: -10px;
+  width: 16px;
+  height: 16px;
+  border-bottom: 4px solid;
+  border-right: 4px solid;
+  border-radius: 4px;
+  transform: rotateZ(45deg);
+}
+
+@keyframes jumpInfinite {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: 20px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
 .datavis{
   max-width: 60rem;
   flex-direction: column;
@@ -377,60 +401,77 @@ animation: octocat-wave 560ms ease-in-out;
 
 
 
-@keyframes octocat-wave {
-0%,
-100% {
-  transform: rotate(0);
-}
-
-20%,
-60% {
-  transform: rotate(-25deg);
-}
-
-40%,
-80% {
-  transform: rotate(10deg);
-}
-}
-
-@media (max-width: 500px) {
-.github-corner:hover .octo-arm {
-  animation: none;
-}
-
-.github-corner .octo-arm {
-  animation: octocat-wave 560ms ease-in-out;
-}
-}
-
-
-#outro {
-height: 250px;
-}
-
-@media (min-width: 840px) {
-.nav__examples {
-  margin-top: 0;
-  margin-left: 2rem;
-}
-}
-
-
 /*-------------地球那段-----------------*/
 footer {
   position: relative;
   overflow: hidden;
-  padding: 5% 7%;
+  padding: 5%;
+  padding-top: 15%;
   margin-bottom: 0%;
-  /* 移除 height: 100vh; */
+}
+
+.contentWindow {
+  overflow: hidden;
+}
+
+.contentWindow p {
+  margin: 10px;
+}
+
+.portlet a {
+  color: unset;
+  transition: 400ms transform ease;
+}
+.portlet a:hover {
+  color: #386676;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+  opacity: 0;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked ~ .portlet-header a {
+  transform: rotate(180deg);
+}
+input[type="checkbox"]:checked ~ .portlet-content {
+  grid-template-rows: 1fr;
+}
+
+.portlet {
+  position: relative;
+  max-width: 60rem;
+  overflow: hidden;
+  margin: auto;
+  margin-bottom: 200px;
+}
+
+.portlet-header {
+  color: #000000;
+  border: 2px black solid;
+  padding: 16px 24px;
+  border-radius: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+.portlet-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 400ms grid-template-rows ease;
 }
 
 .global {
   background-image: url('./illust/Global.svg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   position: absolute;
   top: 0;
   left: 0;
@@ -457,6 +498,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 150px;
 }
 
 .bottom_Text {
@@ -492,7 +534,9 @@ footer {
 .contact{
   gap: 0px;
 }
-
+.box a{
+  font-size: 20px;
+}
 .gif {
   margin-bottom: 16px;
 
@@ -508,7 +552,7 @@ footer {
 
 .man{
   display: flex;
-  width: 169px;
+  width: 168px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -529,4 +573,202 @@ footer {
   margin: auto;
   width: 100%;
   margin-bottom: 15%;
+}
+
+
+/*-----------------手機----------------------*/
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+  }
+  
+@media (max-width: 480px) {
+
+  h2{
+    font-size: 16px;
+  }
+  p{
+    font-size: 12px;
+    }
+  #intro{
+    padding: 24px;
+  }
+  .intro__hed {
+    font-size: 36px;
+    padding: 16px;
+  }
+  .datavis{
+    max-width: 100%;
+  }
+  .datavis iframe{
+    max-width: 400px;
+    margin: auto;
+
+  }
+  .step p {
+    font-size: 12px;
+    padding: 1.2rem;
+    border-radius: 20px;
+    gap: 100px;
+  }
+  .nomadsVisualization svg{
+    width: 300px;
+    height: 300px;
+  }
+  .road1{
+    height: 800px;
+  }
+  .road1 .image:nth-child(1) { /* 主要的道路圖片 */
+    width: 100%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .road1 .image:nth-child(2), /* USA */
+  .road1 .image:nth-child(3), /* Thailand */
+  .road1 .image:nth-child(4) { /* Spain */
+    width: 70%; /* 調整寬度，使三個圖片並排顯示 */
+  }
+
+  .road1 .image:nth-child(2) { /* USA */
+    top: 20%;
+    left: 25%;
+  }
+
+  .road1 .image:nth-child(3) { /* Thailand */
+    top: 35%;
+    left: 0%;
+  }
+
+  .road1 .image:nth-child(4) { /* Spain */
+    top: 55%;
+    left: 20%;
+  }
+
+  .side, .side2{
+    flex-direction: column;
+    gap: 48px;
+    padding: 48px 16px;
+  }
+  .imageside2 img{
+    width: 100%;
+  }
+  #scrolly-1, #scrolly-2,#scrolly-3{
+    padding: 16px;
+  }
+  #scrolly-4 article, #scrolly-5 article, #scrolly-6 article,  #scrolly-7 article{
+    padding: 16px;
+  }
+  .background-image{
+    background-size: 200%;
+    background-position: top center;
+  }
+  .community h2{
+    text-align: center;
+    left: 0%;
+    margin-top: 15%;
+    top: 0%;
+    width: 100%;
+  }
+  .community2 img{
+    max-width: 90%;
+    margin: auto;
+  }
+  .interview{
+    width: 100%;
+    padding: 0%;
+  }
+
+  .interview-images .image2 {
+    max-width: 100%;
+    padding: 16px 24px;
+  }
+
+  .road2 .image:nth-child(1) { /* 主要的道路圖片 */
+    width: 100%;
+    left: 0;
+  }
+  .road2 .image:nth-child(2), 
+  .road2 .image:nth-child(3){
+    width: 50%;
+  }
+  .road2 .image:nth-child(2) {
+    top: 30%;
+    left: 50%;
+  }
+  
+  .road2 .image:nth-child(3) {
+    top: 150px;
+    left: 0%;
+  }
+
+  .gif img{
+    max-width: 100%;
+  }
+  .mangroup{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+  }
+  .man{
+    margin: auto;
+    max-width: 96px;
+  }
+  .man img{
+    width: 100%;
+  }
+  
+  .bottom{
+    margin: 20% auto;
+    padding: 16px;
+  }
+  .bottom_Text{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 48px 0px;
+    margin-top: 120px;
+  }
+
+  .bottom_right{
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .box h3{
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  .box1{
+    gap: 16px;
+  }
+  .box a{
+    font-size: 12px;
+  }
+  .portlet{
+    margin: 16px;
+  }
+  .portlet-header {
+    color: #000000;
+    border: 2px black solid;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 16px;
+  }
+
 }
