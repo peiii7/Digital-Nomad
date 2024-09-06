@@ -9,4 +9,4 @@ In this project, we will delve into the background of digital nomadism, explorin
 * D3.js
 * Scrollama.js
 ## Visit the whole website:
-Click the link here 
+[Let's go](https://peiii7.github.io/Digital-Nomad/index.html)
